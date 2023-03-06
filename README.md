@@ -15,9 +15,10 @@
 	
 ## :warning:  NOTE:
 - This Project is depends on 3 Modules
-    - the modules are hosted on a github Repo here is the link     **https://github.com/DinaSol/2-Tier-Subnets-Module.git**
-    **https://github.com/DinaSol/2-Tier-Web-Module.git**
-    **https://github.com/DinaSol/2-Tier-RDS-Module.git**
+    - the modules are hosted on a github Repo here is the link   
+    -   **https://github.com/DinaSol/2-Tier-Subnets-Module.git**
+    -   **https://github.com/DinaSol/2-Tier-Web-Module.git**
+    -   **https://github.com/DinaSol/2-Tier-RDS-Module.git**
 
     - the project is in this current Repo so I referred to the modules in the code that exist in **main.tf**
 -  Here I used **Paris Region**.
@@ -47,7 +48,7 @@
  #### - About the web instance created in Public subnet so it can be reachable over internet
     - the public subnet take Range of network 10.0.4.0/24
   ##### - requirments to create web instance:  
-    - create security group that allow inbound traffic from port "3306"
+    - create security group that allow inbound traffic from ports "80" & "443"
   ##### - requirments to create public subnet:
         - Has the VPC_id 
         - create an internet-gateway 
@@ -56,7 +57,7 @@
     - the 2 private subnets Ranges of network are [10.0.5.0/24] and [10.0.6.0/24]
   ##### - requirments to create RDS instance:
           - we will need to create group-subnets, that we need the instance to be created in.
-          - create the instance of type that allowed to be in multi-availability-zones as I mentiond in the code ==>  multi_az = true 
+          - create the instance of type that allowed to be in multi-availability-zones as I mentiond in the code ==>  **multi_az = true** 
           - create security group that allow inbound traffic from port "3306"
   ##### - requirments to create Private subnet:
           - Has the VPC_id 
